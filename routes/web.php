@@ -25,3 +25,7 @@ Route::get('/tbis/{id}', [TbiController::class, 'show'])->name('tbis.show');
 Route::get('/tbis/{id}/edit', [TbiController::class, 'edit'])->name('tbis.edit');
 Route::put('/tbis/{id}', [TbiController::class, 'update'])->name('tbis.update');
 Route::delete('/tbis/{id}', [TbiController::class, 'destroy'])->name('tbis.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
