@@ -2,7 +2,7 @@
 
 <h1>Editar Tbi</h1>
 
-<form action="{{ route('tbis.update', ['tbi' => $tbi->id]) }}" method="POST">
+<form action="{{ route('tbis.update', $tbi->id) }}" method="POST">
     @csrf
     @method('PUT')
     <label for="nombre_real">Nombre:</label>

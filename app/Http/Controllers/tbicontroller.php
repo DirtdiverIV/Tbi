@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\tbiModel; // Asegúrate de importar el modelo Tbi
+use Illuminate\Http\Request;
 
 class TbiController extends Controller
 {
@@ -23,14 +24,14 @@ class TbiController extends Controller
 public function store(Request $request)
 {
     $request->validate([
-        'nombre' => 'required',
-        'descripcion' => 'required',
+        'nombre_real' => 'required',
+        'descripcion_real' => 'required',
         // Ajusta las reglas de validación según sea necesario...
     ]);
 
-    Tbi::create([
-        'nombre' => $request->input('nombre'),
-        'descripcion' => $request->input('descripcion'),
+    tbiModel::create([
+        'nombre_real' => $request->input('nombre_real'),
+        'descripcion_real' => $request->input('descripcion_real'),
         // Ajusta otros campos según sea necesario...
     ]);
 
@@ -40,14 +41,14 @@ public function store(Request $request)
     // Método para mostrar un elemento específico
     public function show($id)
     {
-        $tbi = Tbi::find($id);
+        $tbi = tbiModel::find($id);
         return view('tbis.show', ['tbi' => $tbi]);
     }
 
     // Método para mostrar el formulario de edición
     public function edit($id)
     {
-        $tbi = Tbi::find($id);
+        $tbi = tbiModel::find($id);
         return view('tbis.edit', ['tbi' => $tbi]);
     }
 
@@ -55,20 +56,20 @@ public function store(Request $request)
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nombre' => 'required',
-            'descripcion' => 'required',
+            'nombre_real' => 'required',
+            'descripcion_real' => 'required',
             // Ajusta las reglas de validación según sea necesario...
         ]);
     
-        $tbi = Tbi::find($id);
+        $tbi = tbiModel::find($id);
     
         if (!$tbi) {
             return redirect()->route('tbis.index')->with('error', 'Tbi no encontrado.');
         }
     
         $tbi->update([
-            'nombre' => $request->input('nombre'),
-            'descripcion' => $request->input('descripcion'),
+            'nombre_real' => $request->input('nombre_real'),
+            'descripcion_real' => $request->input('descripcion_real'),
             // Ajusta otros campos según sea necesario...
         ]);
     
@@ -78,7 +79,7 @@ public function store(Request $request)
     // Método para eliminar un elemento
 public function destroy($id)
 {
-    $tbi = Tbi::find($id);
+    $tbi = tbiModel::find($id);
     $tbi->delete();
 
     return redirect()->route('tbis.index')->with('success', 'Tbi eliminado exitosamente.');
