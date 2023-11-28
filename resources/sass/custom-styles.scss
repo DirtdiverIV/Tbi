@@ -1,0 +1,16 @@
+/* resources/sass/custom-styles.scss */
+
+#mainDiv {
+    width: 100vw;
+    height: 40vb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#rowDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

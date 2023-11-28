@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'TBI Consulting') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -71,6 +71,11 @@
                 </div>
             </div>
         </nav>
+        <div id="hero" class="container-fluid"><img src="{{ asset('banner.jpg') }}" alt="Descripción de la imagen"></div>
+        <div id="mainDiv" class="container-fluid">
+            <div class="container-fluid" id="rowDiv"> <a href="{{ route('tbis.index') }}" class="btn btn-primary btn-lg">INDEX</a>
+                <a href="{{ route('tbis.create') }}" class="btn btn-primary btn-lg">CREATE</a>
+        </div>
 
         <main class="py-4">
             @yield('content')
