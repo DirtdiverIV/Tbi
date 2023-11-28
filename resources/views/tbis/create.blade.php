@@ -1,5 +1,6 @@
 <!-- resources/views/tbis/create.blade.php -->
-
+@extends('layouts.app')
+@section('content') 
 <h1>Crear Nuevo Tbi</h1>
 
 <form action="{{ route('tbis.store') }}" method="POST">
@@ -12,3 +13,4 @@
     <br>
     <button type="submit">Guardar</button>
 </form>
+@endsection 

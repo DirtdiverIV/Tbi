@@ -84,4 +84,5 @@ public function destroy($id)
 
     return redirect()->route('tbis.index')->with('success', 'Tbi eliminado exitosamente.');
 }
+
 }

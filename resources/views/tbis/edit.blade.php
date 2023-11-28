@@ -1,4 +1,6 @@
 <!-- resources/views/tbis/edit.blade.php -->
+@extends('layouts.app')
+@section('content') 
 
 <h1>Editar Tbi</h1>
 
@@ -13,3 +15,4 @@
     <br>
     <button type="submit">Guardar Cambios</button>
 </form>
+@endsection 

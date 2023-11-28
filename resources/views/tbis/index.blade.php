@@ -1,5 +1,6 @@
-<!-- resources/views/tbis/index.blade.php -->
-
+@extends('layouts.app')
+@section('content') 
+<!-- Ahora sigue con el contenido específico de la vista -->
 <h1>Listado de Tbis</h1>
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,3 +29,5 @@
         {{ session('error') }}
     </div>
 @endif
+
+@endsection 
